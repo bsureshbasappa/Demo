@@ -1,0 +1,36 @@
+Section 1 Interductions
+    Main Protagonists
+        - .Net Core 
+        - Angular
+        Supporting InitialCreates  
+        - Entity FrameWordk
+        - Sqlite
+        - git
+        - Bootstrap
+        - Typoscript(TS)
+
+    Setting up the developer environment
+        - .Net 5 Core
+        - Postman
+        - Visual Studio Code
+        - git
+
+    Getting up VS Code for C# development
+        - Command Prompt
+        - Select Folder (C:\>cd C:\Users\reach\Desktop\MyProject)
+        - Type (C:\Users\reach\Desktop\MyProject>code .)
+        - Install the Extensions 
+            - C# Extensions - Joskreativ
+            - Mateiral Icon Theme - Philipp Kief
+            - NuGet Gallery - pcislo
+            - Sqlite - alexcvzz
+    
+    Where to get the source code and course assets
+        - Source Code - https://github.com/trycatchlearn/skinet
+        - Course assets - C:\Demo\StudentAssets
+    
+Section 2: API Basics
+
+
+PS C:\Demo> dotnet ef database drop -p Infrastracture -s API
+PS C:\Demo> dotnet ef migrations add InitialCreates -p Infrastracture -s API -o Data/Migrations   

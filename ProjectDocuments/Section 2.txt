@@ -1,0 +1,101 @@
+API Basics 
+- Interductions
+    - API Basics
+    - Using the dotnet CLI
+    - Reviewing Project Template
+    - Running App
+    - EF Migrations
+    - Postman
+    - Using git for Source Control
+
+    - Goal : -
+        To Have Working API that returns data from a database stored in Sqlite and return to the client
+    - To understand the Basics of an API in .Net
+
+Creating the Web API project
+    - Command Prompt
+    - Select Folder - (C:\>cd C:\Users\reach\Desktop\MyProject)
+    - Create Directory - C:\Users\reach\Desktop\MyProject>mkdir skinet
+    - Select Foder - C:\Users\reach\Desktop\MyProject>cd skinet
+    - Create Sln - C:\Users\reach\Desktop\MyProject\skinet>dotnet new sln
+    - Create Webapi - C:\Users\reach\Desktop\MyProject\skinet>dotnet new webapi -o API
+    - Add Project to Solution File - C:\Users\reach\Desktop\MyProject\skinet>dotnet sln add API
+    - Open Ide - C:\Users\reach\Desktop\MyProject\skinet>code .
+    - Popup - Required assets to build and debug are missing from 'skinet'. Add Theme
+    - Press yes
+
+Running the API using the DotNet CLI
+
+DbContext - Add Entitiy Framework Package 
+    
+    - Check the .Net Version ( PS C:\Demo> dotnet --info )
+    install required Version
+    - Microsoft.EntityFrameworkCore.Sqlite
+
+Check the Migration tools
+    PS C:\Demo\api> dotnet tool list -g
+
+    Weblink for dotnet Ef tool
+    https://www.nuget.org/packages/dotnet-ef
+
+    install dotnet Ef tool
+    PS C:\Demo\api> dotnet tool install --global dotnet-ef --version 5.0.7
+
+    For Update dotnet Ef tool
+    PS C:\Demo\api> dotnet tool update --global dotnet-ef --version 5.0.7
+
+    Find dontnet EF commands 
+    PS C:\Demo\api>dotnet ef -h
+        database
+        DbContext
+        migrations
+
+    Createing Migrations
+    PS C:\Demo\api> dotnet ef migrations add InitialCreates -o Data/Migrations
+                    * -o :- Output Directory
+                    
+
+    to work this migrations need to install 
+     -Microsoft.EntityFrameworkCore.Design
+
+     find the commands of ef database
+       PS C:\Demo\api> dotnet ef database -h
+        drop - Drop the database
+        update - update the existing database or will create the new database
+
+    Create Two Additional Project inside the project
+    Dotnet Project Template list
+        -PS C:\Demo> dotnet new -l
+        -PS C:\Demo> dotnet new -h    
+    use CLASS LIBRARY Template
+        classlib
+
+    create class library
+    PS C:\Demo> dotnet new classlib -o Core
+    PS C:\Demo> dotnet new classlib -o Infrastracture
+
+    add Core and Infrastracture project to Solutions
+    PS C:\Demo> dotnet sln add Core
+    PS C:\Demo> dotnet sln add Infrastracture
+
+    add the dependency to API to Infrastracture
+    PS C:\Demo> cd api
+    PS C:\Demo\api> dotnet add referance ../Infrastracture
+
+    add the dependency to Core to Infrastracture
+    got to Infrastracture
+    PS C:\Demo> cd Infrastracture
+    PS C:\Demo\Infrastracture> dotnet add referance ../Core
+
+    Register the refrances which we added
+    PS C:\Demo> dotnet restore
+
+    biild the project
+    PS C:\Demo> dotnet build
+
+
+
+
+
+
+    

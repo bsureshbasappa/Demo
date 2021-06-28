@@ -1,0 +1,4 @@
+Adding data - Adding Database - Configruing Entity Framework -Object Relation Mapper
+
+Quary Data base from clients - Controller end point Entities - we can quary database retrun items or resources database
+migration will create the database based on code

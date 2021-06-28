@@ -51,4 +51,6 @@ Section 3: API Architecture
 
     Git hub push
     PS C:\Demo> git add .
+    PS C:\Demo> git commit -m "End of Section 3"
+    PS C:\Demo> git push origin master
     

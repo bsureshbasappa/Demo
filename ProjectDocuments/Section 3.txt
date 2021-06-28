@@ -1,0 +1,54 @@
+Section 3: API Architecture
+    API (JOB)
+        - Controller
+        *Startup Application
+        *dependency injecation continer
+        *Middleware
+        *Rooting any request come in to our controllers
+
+    Infrastracture
+        -Repository
+        -DbContext
+        -Services
+        * Sending Quary to database
+        * Stripe Services
+        * Payment Services
+    Core
+        -Entities
+        -Interfaces
+    
+    The Repository Pattern - Goal
+        - Decouple business code from data access
+        - Seperation of concern
+        - Minimize the duplicate Quary logic
+        - Testability
+
+     The Repository Pattern - Consiquences 
+        - Increase level of Obstraction
+        - Increase Maintanability, flexibility, Testability
+        - More Classes/interfaces - less duplicate code
+        - Business logic is further away from the data
+        - Harder to optimise certain operations against the data Source
+    
+
+    To update the new migrations
+
+    Remove Database 
+    PS C:\Demo> dotnet ef database drop -p infrastracture -s API
+
+    Remove Migrations 
+    PS C:\Demo> dotnet ef migrations remove -p infrastracture -s API 
+
+    Create New Migrations
+    PS C:\Demo> dotnet ef migrations add InitialCreate -p infrastracture -s API -o Data/Migrations
+    
+    Create New or update existing database
+    PS C:\Demo> dotnet ef database update -p infrastracture -s API
+
+     -p : Project
+     -s : Startup
+     -o : Output Directory
+
+    Git hub push
+    PS C:\Demo> git add .
+    

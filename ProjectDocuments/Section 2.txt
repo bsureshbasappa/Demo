@@ -93,8 +93,17 @@ Check the Migration tools
     biild the project
     PS C:\Demo> dotnet build
 
+    use Source control git hub
+    PS C:\Demo> git status
+    PS C:\Demo> git config --global user.email "sureshdug@gmail.com"
+    PS C:\Demo> git config --global user.name "bsureshbasappa" 
+
+    You can store the credentials on your local disk using
+
+    git config --global credential.helper 'store'
 
 
+    Control Panel\All Control Panel Items\Credential Manager
 
 
 

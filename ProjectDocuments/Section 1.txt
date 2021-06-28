@@ -31,6 +31,5 @@ Section 1 Interductions
     
 Section 2: API Basics
 
-
 PS C:\Demo> dotnet ef database drop -p Infrastracture -s API
 PS C:\Demo> dotnet ef migrations add InitialCreates -p Infrastracture -s API -o Data/Migrations   

@@ -97,14 +97,16 @@ Check the Migration tools
     PS C:\Demo> git status
     PS C:\Demo> git config --global user.email "sureshdug@gmail.com"
     PS C:\Demo> git config --global user.name "bsureshbasappa" 
+    PS C:\Demo> git push -u origin master
 
     You can store the credentials on your local disk using
-
     git config --global credential.helper 'store'
 
+    git hub remove credentials path
+    -Control Panel\All Control Panel Items\Credential Manager
 
-    Control Panel\All Control Panel Items\Credential Manager
-
-
+    Git: fatal: Unable to create C:/Demo/.git/index.lock:  File exist (Do below)
+    cd .git
+    del index.lock
 
     

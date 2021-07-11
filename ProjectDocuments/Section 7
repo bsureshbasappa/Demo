@@ -1,0 +1,46 @@
+cli.angular.io
+https://nodejs.org/en/
+
+Node Manager Version check
+    PS C:\Demo> nvm ls
+
+NPM Version 
+    PS C:\Demo> npm --version
+
+Installing Node.js with     
+    https://joachim8675309.medium.com/installing-node-js-with-nvm-4dc469c977d9
+
+
+Install the Angular CLI
+
+https://angular.io/guide/setup-local
+    PS C:\Demo> npm install -g @angular/cli
+
+Install the Angular CLI Specific Version
+    PS C:\Demo> npm install -g @angular/cli@11.2.1
+
+Install Latest Version of npm
+    PS C:\Demo> npm install -g npm
+
+UnInstall Latest Version of npm
+    PS C:\Demo> npm uninstall -g npm  
+
+Install Specific version NVM 12.18.3
+   PS C:\Demo> nvm install 12.18.3
+
+UnInstall Specific version NVM 12.18.3
+    PS C:\Demo> nvm uninstall 12.18.3 
+
+Create the Angular Project
+    PS C:\Demo> ng new client
+
+BootStrap       
+    https://valor-software.com/ngx-bootstrap/#  
+
+    https://valor-software.com/ngx-bootstrap/documentation#installation
+
+    npm install ngx-bootstrap
+
+    PS C:\Demo\client> npm install bootstrap@4.6.0 
+
+    PS C:\Demo\client> npm install font-awesome

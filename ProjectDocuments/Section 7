@@ -39,8 +39,12 @@ BootStrap
 
     https://valor-software.com/ngx-bootstrap/documentation#installation
 
-    npm install ngx-bootstrap
+    PS C:\Demo\client> npm install ngx-bootstrap
 
     PS C:\Demo\client> npm install bootstrap@4.6.0 
 
     PS C:\Demo\client> npm install font-awesome
+
+    
+
+    https://getbootstrap.com/

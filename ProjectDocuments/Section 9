@@ -1,0 +1,23 @@
+    g - Create
+    m - module
+    c - component
+    s - Serviace
+
+Create a core module
+
+PS C:\Demo\client\src\app> ng g m core
+Creating a Module
+
+
+Creating a Module in New Folder
+PS C:\Demo\client\src\app> ng g m shop
+
+Creating a component without folder (flat)
+PS C:\Demo\client\src\app\shop> ng g c shop --flat --skip--test 
+    
+Creating Serviace inside the Shop folder
+PS C:\Demo\client\src\app\shop> ng g s shop --skip-tests --flat
+
+Creating a component in new folder in the Shop folder
+
+PS C:\Demo\client\src\app\shop> ng g c product-item --skip-tests

@@ -1,0 +1,60 @@
+breadcrumb Feature Installation
+
+https://www.npmjs.com/package/xng-breadcrumb
+
+npm install --save xng-breadcrumb
+
+Bootswatch: Free themes for Bootstrap
+https://bootswatch.com/
+
+to install this runn this command
+
+PS C:\Demo\client> npm install bootswatch
+
+
+Loading Indicator
+
+PS C:\Demo\client> npm install -g @angular/cli@11.0.0
+
+PS C:\Demo\client> npm install ngx-spinner@11.0.2
+
+
+Check 
+
+
+PS C:\Demo> npm --version
+6.4.1
+
+PS C:\Demo> nvm ls
+
+    14.15.5
+  * 10.13.0 (Currently using 64-bit executable)
+
+PS C:\Demo> nvm version  
+1.1.7
+
+PS C:\Demo> ng version   
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 11.0.0
+Node: 10.13.0
+OS: win32 x64
+
+Angular:
+...
+Ivy Workspace:
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.1100.0 (cli-only)
+@angular-devkit/core         11.0.0 (cli-only)
+@angular-devkit/schematics   11.0.0 (cli-only)
+@schematics/angular          11.0.0 (cli-only)
+@schematics/update           0.1100.0 (cli-only)

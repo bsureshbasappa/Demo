@@ -36,11 +36,13 @@ export class TestErrorsComponent implements OnInit {
     this.http.get(this.baseUrl + 'buggy/badrequest').subscribe(response => {
       console.log(response);
     }, error =>{
+      this.validationErrors="";
       console.log(error)
     })
   }
 
   get400ValiationError(){
+   
     this.http.get(this.baseUrl + 'products/fourtytwo').subscribe(response => {
       console.log(response);
     }, error =>{

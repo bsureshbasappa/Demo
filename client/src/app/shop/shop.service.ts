@@ -41,10 +41,13 @@ export class ShopService {
     return this.http.get<IPagination>(this.baseUrl+ 'products',{observe:'response', params})
     .pipe(
       map(response=>{
-        return response.body
+        console.log(response);
+        return response;
       })
     );
   }
+
+  
 
   getProduct(id:number){
     return this.http.get<IProduct>(this.baseUrl + 'products/' + id);

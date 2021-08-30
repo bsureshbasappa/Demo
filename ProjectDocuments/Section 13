@@ -1,0 +1,29 @@
+Download and Install Docker Desktop
+
+https://www.docker.com/products/docker-desktop
+
+Add Docker compose file from student asset folder
+docker-compose.yml 
+
+Run below command to Docker redis File in docker
+PS C:\Demo> docker-compose up --detach
+
+Install Redis through Package manager chocolatey
+https://chocolatey.org/
+
+Open PowerShell and run the below command
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+
+Package Manager
+
+window powershell Runn command
+ choco install redis-64 --version=3.0.501
+
+ Open Command Prompt - to Start Rediu Server 
+ C:\Users\reach>redis-server
+
+ Open Command Prompt
+ PS C:\Demo> redis-cli
+
+ Download and install Redily app
+ https://www.softpedia.com/dyn-postdownload.php/39487f1e464c8882e69a2502934370e6/612cb8c9/3fdb2/4/1

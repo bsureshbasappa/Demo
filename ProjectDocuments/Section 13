@@ -1,3 +1,8 @@
+Goal 
+
+To Set up and configure Redis to store the customer basket in 
+server memory and create the supporting repository and controller
+
 Download and Install Docker Desktop
 
 https://www.docker.com/products/docker-desktop

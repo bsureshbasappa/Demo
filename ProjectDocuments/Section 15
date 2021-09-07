@@ -1,0 +1,30 @@
+Install the pakage in core project
+
+    Microsoft.AspNetCore.Identity.EntityFrameworkCore -   Core Project
+                            ASP.NET Core Identity provider that uses Entity Framework Core. 
+                            This package was built from the source code at
+
+    Microsoft.AspNetCore.Identity -  Infrastracture Project
+                            ASP.NET Core Identity is the membership system for 
+                            building ASP.NET Core web applications, including membership, 
+                            login, and user data. ASP.NET Core Identity allows you to add 
+                            login features to your application and makes it easy to customize 
+                            data about the logged in user. This package was built from the source code at
+
+    Microsoft.IdentityModel.Tokens  - Infrastracture Project
+                            ( Includes types that provide support for 
+                            SecurityTokens, Cryptographic operations: 
+                            Signing, Verifying Signatures, Encryption.)
+
+    System.IdentityModel.Tokens.Jwt - Infrastracture Project
+                            Includes types that provide support for creating, 
+                            serializing and validating JSON Web Tokens.
+
+Install the latest 
+
+
+PS C:\Demo> dotnet ef migration add IdentityIntial 
+        -p Infrastracture - DB Context Location -p
+        -s API - Startup Project
+        -c AppIdentityDbContext - Context 
+        -o Identity/Migrations - Output

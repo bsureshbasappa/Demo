@@ -1,3 +1,8 @@
+Goal
+To Implement ASP.NET Identity to allow clients to login  and register to our app
+and recive a JWT Token which can be use to autenticate againest certain classes/method in the API
+
+
 Install the pakage in core project
 
     Microsoft.AspNetCore.Identity.EntityFrameworkCore -   Core Project

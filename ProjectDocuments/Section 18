@@ -1,0 +1,30 @@
+In this Module
+    Adding the Order Entity
+    Aggregate Entity
+    Owned Entities
+    Unit of work pattern
+
+Order Related Table Generation Step by step code
+
+    1. Create Order Aggregate
+    2. Configure Order Entity
+    2. Update StoreContext
+    3. Seeding Delevery method
+    4. Creating the Order Migrations
+
+Createing A Service which can generate new Order, Get Order for User, Get Specific Order
+
+    Create the Interface for Order Service
+    Create a Order Service 
+
+    to use this Service add in Applicaiton Service Extensio
+
+
+        Get Basket from basker repo
+        get item from the product repo
+        get Delevery method from repo
+        Calc subtotal
+        Create order
+        save to db
+        return order
+    

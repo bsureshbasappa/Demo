@@ -29,7 +29,7 @@ namespace Core.Specification
         public int Skip {get; private set;}
         public bool ISPagingEnabled {get; private set;}
 
-        protected void AddIncludes(Expression<Func<T, object>> includeExpression)
+        protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
             Includes.Add(includeExpression);
         }

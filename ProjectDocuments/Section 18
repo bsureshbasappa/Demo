@@ -27,4 +27,10 @@ Createing A Service which can generate new Order, Get Order for User, Get Specif
         Create order
         save to db
         return order
+
+    Summary
+       - Adding the Order Entity
+       - Aggregate Entities
+       - Owned Entity
+       - unit of work pattern
     

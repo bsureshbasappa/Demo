@@ -1,0 +1,19 @@
+Implementing the checkout
+Collecting info from User
+Multi Step Form
+Using HttpInterceptor to send JWT Token
+Forms - Updating the form with data from Applicaiton
+
+Goal
+ To Implement the client checkout using a multi-step form wizard
+ To use the HttpInterceptor to auto send the JwtToken
+
+---------------------------------------------------
+ Multi Step Functionality use angular  CdkStepper
+
+ https://material.angular.io/
+
+ PS C:\Demo> cd client
+PS C:\Demo\client> ng add @angular/cdk
+
+ ---------------------------------------------------

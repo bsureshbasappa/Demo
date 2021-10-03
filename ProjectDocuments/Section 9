@@ -12,10 +12,13 @@ Creating a Module
 Creating a Module in New Folder
 PS C:\Demo\client\src\app> ng g m shop
 
+Creating a Module in Existing Folder
+PS C:\Demo\client\src\app> ng g m shop --flat  
+
 Creating a component without folder (flat)
-PS C:\Demo\client\src\app\shop> ng g c shop --flat --skip--test 
+PS C:\Demo\client\src\app\shop> ng g c shop --flat --skip--tests 
     
-Creating Serviace inside the Shop folder
+Creating Serviace Existing folder
 PS C:\Demo\client\src\app\shop> ng g s shop --skip-tests --flat
 
 Creating a component in new folder in the Shop folder

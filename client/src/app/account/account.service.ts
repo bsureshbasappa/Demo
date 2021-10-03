@@ -18,7 +18,7 @@ export class AccountService {
 
 
   loadCurrentUser(token:string){
-
+      token= "eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImJvYkB0ZXN0LmNvbSIsImdpdmVuX25hbWUiOiJib2IiLCJuYmYiOjE2MzI5MTUwNzIsImV4cCI6MTYzMzUxOTg3MiwiaWF0IjoxNjMyOTE1MDcyLCJpc3MiOiJodHRwczovL2xvY2FsaG9zdDo1MDAxIn0.fhgsL2S1FONJKF__tR7JRAPIpOZ7lfneWD2VJwovViWEqLX7N0p9pCm5HBW9xAJdBbQy09ot-ZkQ013tzz2ahA"
     if(token===null){
       this.currentUserSource.next(null);
       return of(null);

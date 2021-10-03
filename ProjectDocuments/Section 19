@@ -17,3 +17,9 @@ Goal
 PS C:\Demo\client> ng add @angular/cdk
 
  ---------------------------------------------------
+
+
+ Goal 
+
+ To Implement the client checkout using a multi-step form wizard
+ To use the HttpInterceptor to auto sne dthe JwtToken

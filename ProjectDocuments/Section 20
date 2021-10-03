@@ -1,0 +1,12 @@
+Creating the Order Feature module
+Student Excesice
+
+Goal
+For you to implement the orders feature so that the user 
+can display their order history and the individual order details.
+
+Goal 1
+To implement this feature using the HTML provided for the Order list and order detailed compenet.
+
+Goal 2
+Strech GoalTo Implemnet the Order Detailed View by using the basket summery and order total shared components

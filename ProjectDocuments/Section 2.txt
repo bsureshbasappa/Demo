@@ -1,3 +1,13 @@
+
+            API  -  I Recive HTTP Requests and Respond to Them
+
+            Infrastracture  - I Will Communicate with the DB and send queries and get data
+
+
+            Core  - I Contain the Bussiness Entitiy. I didnot depend anything
+
+
+
 API Basics 
 - Interductions
     - API Basics

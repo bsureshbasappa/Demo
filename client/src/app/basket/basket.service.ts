@@ -23,6 +23,7 @@ export class BasketService {
   setShippingPrice(delivaryMethod:IDeliveryMethod){
     this.shipping=delivaryMethod.price;
     this.calculateTotals();
+    console.log("setShippingPrice")
   }
 
   getBasket(id:String){
@@ -30,6 +31,7 @@ export class BasketService {
       map((basket:IBasket)=>{
         this.basketSource.next(basket);
         this.calculateTotals();
+        console.log("getBasket")
       })
     );
   }
@@ -38,12 +40,14 @@ export class BasketService {
     return this.http.post(this.baseUrl+ 'basket', basket).subscribe((response:IBasket)=>{
       this.basketSource.next(response);
       this.calculateTotals();
+      console.log("setBasket")
     }, error=>{
       console.log(error);
     });
   }
 
   getCurrentBasketValue(){
+    console.log(" getCurrentBasketValue")
     return this.basketSource.value;
   }
 
@@ -52,6 +56,7 @@ export class BasketService {
     const basket = this.getCurrentBasketValue() ?? this.createBasket();
     basket.items=this.addOrUpdateItem(basket.items, itemToAd, quantity);
     this.setBasket(basket);
+    console.log("addItemToBasket")
   }
 
   incrementItemQuantity(item:IBasketItem){
@@ -59,6 +64,7 @@ export class BasketService {
     const foundItemIndex = basket.items.findIndex(x=>x.id===item.id);
     basket.items[foundItemIndex].quantity++;
     this.setBasket(basket);
+    console.log("incrementItemQuantity")
   }
 
   decrementItemQuantity(item:IBasketItem){
@@ -70,6 +76,7 @@ export class BasketService {
     } else {
       this.removeItemFromBasket(item);
     }
+    console.log("decrementItemQuantity")
   }
   removeItemFromBasket(item: IBasketItem) {
     const basket = this.getCurrentBasketValue();
@@ -80,6 +87,9 @@ export class BasketService {
       }else{
         this.deleteBasket(basket);
       }
+
+      console.log("removeItemFromBasket")
+
     }
   }
 
@@ -87,9 +97,11 @@ export class BasketService {
     this.basketSource.next(null);
     this.basketTotalSource.next(null);
     localStorage.removeItem('basket_id');
+    console.log("deleteLocalBasket")
   }
 
   deleteBasket(basket: IBasket) {
+    console.log("deleteBasket")
     return this.http.delete(this.baseUrl+ 'basket?id=' +basket.id).subscribe(() =>{
       this.basketSource.next(null);
       this.basketTotalSource.next(null);

@@ -20,7 +20,7 @@ namespace Infrastracture.Data
             return await _database.KeyDeleteAsync(basketId);
         }
 
-        public async Task<CustomerBasket> getBasketAsync(string basketId)
+        public async Task<CustomerBasket> GetBasketAsync(string basketId)
         {
             var data = await _database.StringGetAsync(basketId);
 
@@ -34,7 +34,7 @@ namespace Infrastracture.Data
 
             if(!created) return null;
 
-            return await getBasketAsync(basket.Id);
+            return await GetBasketAsync(basket.Id);
         }
     }
 }

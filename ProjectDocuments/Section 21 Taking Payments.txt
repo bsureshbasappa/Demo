@@ -1,0 +1,57 @@
+Taking Payments
+    API
+    Client
+    Payments
+
+
+
+
+
+PCI Compliance
+Strong Customer Authentication
+
+----In this module----------
+Creating a Stripe account
+PCI DSS Compliance
+Strong Customer Authentication
+Using Stripe Elements
+Validating Cards
+Confirming Card Payments
+Webhooks
+
+-----------Goal------------
+To be able to accept payments securely globally and complies with EU regulations and PCI DSS
+
+----PCI DSS Compliance---
+Payment Card Industry Data Security Standard
+ - Set of Industry Standards
+ - Designed to protect payment card Data
+ - Increased protection for customers 
+   and redused risk of data breaches involving personal card data
+
+- 12 broad requirments and collectively more than 200 line item requirments
+- 6 Key Areas
+    - Building and maintaining a secure network
+    - protecting cardholder data
+    - Maintaining a vulnerability management program
+    - implementing strong access control measures
+    - regular monitor and test networks
+    - maintaining an information security policy
+
+PCI DSS non-compliance consequencess
+- Monthly financial penalties from $5000 to $100000
+- Infringement consequencess ($50 to $90 per card holder whose information has been endangered)
+- Componsation costs
+- Legal Action
+- Damaged Reputation
+- Revemie Loss
+- Federal audits 
+
+Strong Customer Authentication
+- EU standards for authenticating online payment
+- Requires two or three elements:
+  - Something the customer knows (password or pin)
+  - Something the customer has (hone or hardware token)
+  - Something the customer is (fingerprint or facial recognition)
+
+- Banks will decline payments that Requires SCA and don't meet this criteria

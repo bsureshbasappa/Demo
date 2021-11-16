@@ -22,7 +22,7 @@ namespace Infrastracture.Services
         public async Task<Order> CreateOrderAsync(string buyerEmail, int deliveryMethodId, string basketId, Address shipmentAddress)
         {
             //Get basekt from the repo
-            var basekt = await _basketRepo.getBasketAsync(basketId);
+            var basekt = await _basketRepo.GetBasketAsync(basketId);
 
             //Get items from the product repo
             var items = new List<OrderItem>();

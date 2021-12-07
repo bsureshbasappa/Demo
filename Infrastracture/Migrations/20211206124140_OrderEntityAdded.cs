@@ -1,7 +1,6 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace Infrastracture.Data.Migrations
+namespace Infrastracture.Migrations
 {
     public partial class OrderEntityAdded : Migration
     {
@@ -24,13 +23,39 @@ namespace Infrastracture.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProductBrand",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductBrand", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductType",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductType", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Orders",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     BuyerEmail = table.Column<string>(type: "TEXT", nullable: true),
-                    OrderDate = table.Column<DateTimeOffset>(type: "TEXT", nullable: false),
+                    OrderDate = table.Column<long>(type: "INTEGER", nullable: false),
                     ShipToAddress_FirstName = table.Column<string>(type: "TEXT", nullable: true),
                     ShipToAddress_LastName = table.Column<string>(type: "TEXT", nullable: true),
                     ShipToAddress_Street = table.Column<string>(type: "TEXT", nullable: true),
@@ -40,7 +65,7 @@ namespace Infrastracture.Data.Migrations
                     DeliveryMethodId = table.Column<int>(type: "INTEGER", nullable: true),
                     Subtotal = table.Column<double>(type: "REAL", nullable: false),
                     Status = table.Column<string>(type: "TEXT", nullable: false),
-                    PymentIntentId = table.Column<string>(type: "TEXT", nullable: true)
+                    PaymentIntentId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -54,6 +79,36 @@ namespace Infrastracture.Data.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Products",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Name = table.Column<string>(type: "TEXT", maxLength: 100, nullable: false),
+                    Description = table.Column<string>(type: "TEXT", nullable: false),
+                    Price = table.Column<double>(type: "decimal(18,2)", nullable: false),
+                    PictureUrl = table.Column<string>(type: "TEXT", nullable: false),
+                    ProductTypeId = table.Column<int>(type: "INTEGER", nullable: false),
+                    ProductBrandId = table.Column<int>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Products", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Products_ProductBrand_ProductBrandId",
+                        column: x => x.ProductBrandId,
+                        principalTable: "ProductBrand",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Products_ProductType_ProductTypeId",
+                        column: x => x.ProductTypeId,
+                        principalTable: "ProductType",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "OrderItems",
                 columns: table => new
                 {
@@ -62,7 +117,7 @@ namespace Infrastracture.Data.Migrations
                     ItemOrdered_ProductItemId = table.Column<int>(type: "INTEGER", nullable: true),
                     ItemOrdered_ProductName = table.Column<string>(type: "TEXT", nullable: true),
                     ItemOrdered_PictureUrl = table.Column<string>(type: "TEXT", nullable: true),
-                    decimal182 = table.Column<double>(name: "decimal(18,2)", type: "REAL", nullable: false),
+                    Price = table.Column<double>(type: "decimal(18,2)", nullable: false),
                     Quantity = table.Column<int>(type: "INTEGER", nullable: false),
                     OrderId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
@@ -86,6 +141,16 @@ namespace Infrastracture.Data.Migrations
                 name: "IX_Orders_DeliveryMethodId",
                 table: "Orders",
                 column: "DeliveryMethodId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductBrandId",
+                table: "Products",
+                column: "ProductBrandId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Products_ProductTypeId",
+                table: "Products",
+                column: "ProductTypeId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -94,7 +159,16 @@ namespace Infrastracture.Data.Migrations
                 name: "OrderItems");
 
             migrationBuilder.DropTable(
+                name: "Products");
+
+            migrationBuilder.DropTable(
                 name: "Orders");
+
+            migrationBuilder.DropTable(
+                name: "ProductBrand");
+
+            migrationBuilder.DropTable(
+                name: "ProductType");
 
             migrationBuilder.DropTable(
                 name: "DeliveryMethods");

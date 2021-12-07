@@ -6,10 +6,10 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Infrastracture.Data.Migrations
+namespace Infrastracture.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20210921071020_OrderEntityAdded")]
+    [Migration("20211206124140_OrderEntityAdded")]
     partial class OrderEntityAdded
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,10 +53,10 @@ namespace Infrastracture.Data.Migrations
                     b.Property<int?>("DeliveryMethodId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTimeOffset>("OrderDate")
-                        .HasColumnType("TEXT");
+                    b.Property<long>("OrderDate")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("PymentIntentId")
+                    b.Property<string>("PaymentIntentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
@@ -83,8 +83,7 @@ namespace Infrastracture.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<double>("Price")
-                        .HasColumnType("REAL")
-                        .HasColumnName("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");

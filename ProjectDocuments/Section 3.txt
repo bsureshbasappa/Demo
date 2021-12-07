@@ -33,15 +33,22 @@ Section 3: API Architecture
 
     To update the new migrations
 
-    Remove Database 
+    Remove Database (single DbContext)
     PS C:\Demo> dotnet ef database drop -p infrastracture -s API
 
-    Remove Migrations 
+    Remove Database (Multiple DbContext)
+    PS C:\Demo> dotnet ef database drop -c StoreContext -p Infrastracture -s API
+
+    Remove Migrations (single DbContext)
     PS C:\Demo> dotnet ef migrations remove -p infrastracture -s API 
 
-    Create New Migrations
+    Create New Migrations (single DbContext)
     PS C:\Demo> dotnet ef migrations add InitialCreate -p infrastracture -s API -o Data/Migrations
     
+    Create New Migrations (Multiple DbContext)
+    dotnet ef migrations add OrderEntityAdded -p Infrastracture -s API -c StoreContext
+    
+
     Create New or update existing database
     PS C:\Demo> dotnet ef database update -p infrastracture -s API
 

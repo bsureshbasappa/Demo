@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace Infrastracture.Data.Migrations
+namespace Infrastracture.Migrations
 {
     [DbContext(typeof(StoreContext))]
     partial class StoreContextModelSnapshot : ModelSnapshot
@@ -51,10 +51,10 @@ namespace Infrastracture.Data.Migrations
                     b.Property<int?>("DeliveryMethodId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<DateTimeOffset>("OrderDate")
-                        .HasColumnType("TEXT");
+                    b.Property<long>("OrderDate")
+                        .HasColumnType("INTEGER");
 
-                    b.Property<string>("PymentIntentId")
+                    b.Property<string>("PaymentIntentId")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Status")
@@ -81,8 +81,7 @@ namespace Infrastracture.Data.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<double>("Price")
-                        .HasColumnType("REAL")
-                        .HasColumnName("decimal(18,2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");

@@ -6,12 +6,14 @@ import { IType } from '../shared/models/productType';
 import {map} from 'rxjs/operators'
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
+import { of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ShopService {
   baseUrl='https://localhost:5001/api/'
+  products:IProduct[]=[];
 
   shopParams= new ShopParams();
 
@@ -41,6 +43,7 @@ export class ShopService {
     return this.http.get<IPagination>(this.baseUrl+ 'products',{observe:'response', params})
     .pipe(
       map(response=>{
+        this.products = response.body.data;
            return response;
       })
     );
@@ -49,6 +52,12 @@ export class ShopService {
   
 
   getProduct(id:number){
+    const product = this.products.find(p=>p.id === id);
+
+    if(product){
+      return of(product);
+    }
+
     return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
   }
 

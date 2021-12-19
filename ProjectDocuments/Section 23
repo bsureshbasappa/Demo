@@ -1,0 +1,4 @@
+Create Migraton 
+
+PS C:\Demo> dotnet ef migrations add "PostGres Intitial" -p Infrastracture -s API -c StoreContext -o Data/Migrations
+PS C:\Demo> dotnet ef migrations add "PostGres identity initial" -p Infrastracture -s API -c AppIdentityDbContext -o Identity/Migrations
